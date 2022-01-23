@@ -20,6 +20,8 @@ WORKDIR /home/p2pool
 
 COPY mini_config.json /home/p2pool/mini_config.json
 
+COPY p2pool_peers.txt /home/p2pool/p2pool_peers.txt
+
 COPY --chown=p2pool:p2pool --from=build /root/p2pool /home/p2pool/p2pool
 
 EXPOSE 37888
