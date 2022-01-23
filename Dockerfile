@@ -24,7 +24,9 @@ COPY p2pool_peers.txt /home/p2pool/p2pool_peers.txt
 
 COPY --chown=p2pool:p2pool --from=build /root/p2pool /home/p2pool/p2pool
 
-EXPOSE 37888
+RUN chmod 777 /home/p2pool/p2pool
+
+EXPOSE 37888 3333
 
 ENTRYPOINT ["./p2pool"]
 CMD ["--non-interactive", "--config", "mini_config.json", "--p2p", "0.0.0.0:37888", "--host", "10.12.35.28", "--wallet", "46pBm7UZrLYeiUbNrqRuqJhXpDPhJEoyFRu3gmcGeMS4KnTt93RSJBv3mLh8vfMESJ999fDqTxytJUxK13ztJ3FyBGZFmhr"]
